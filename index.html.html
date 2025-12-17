@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Smart Learning Website</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Montserrat:wght@400;700&family=Roboto+Slab&family=Courier+Prime&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  background:linear-gradient(to right,#e3f2fd,#ede7f6);
+  font-family:'Poppins',sans-serif;
+}
+header{
+  background:linear-gradient(to right,#512da8,#1a237e);
+  color:white;
+  padding:25px;
+  text-align:center;
+  font-family:'Montserrat',sans-serif;
+}
+nav{
+  background:#311b92;
+  text-align:center;
+  padding:10px;
+}
+nav button{
+  margin:5px;
+  padding:10px 16px;
+  border:none;
+  border-radius:20px;
+  cursor:pointer;
+  font-weight:bold;
+}
+.page{display:none;padding:25px;}
+.card{
+  background:white;
+  padding:25px;
+  border-radius:18px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+  margin-bottom:25px;
+}
+h2{font-family:'Montserrat',sans-serif;}
+.content-text{
+  font-family:'Roboto Slab',serif;
+  line-height:1.8;
+}
+input,textarea{
+  width:100%;
+  padding:12px;
+  margin:8px 0;
+  border-radius:10px;
+  border:1px solid #ccc;
+}
+button.action{
+  background:#512da8;
+  color:white;
+}
+iframe{
+  width:100%;
+  height:250px;
+  border-radius:12px;
+}
+.output{
+  background:#000;
+  color:#00ff00;
+  padding:15px;
+  border-radius:10px;
+  font-family:'Courier Prime',monospace;
+}
+ul li{margin-bottom:8px;}
+.highlight{
+  background:#ede7f6;
+  padding:15px;
+  border-left:5px solid #512da8;
+  border-radius:10px;
+}
+</style>
+
+<script>
+function showPage(id){
+  document.querySelectorAll('.page').forEach(p=>p.style.display="none");
+  document.getElementById(id).style.display="block";
+}
+
+function login(){
+  if(user.value==="USER" && pass.value==="PASS"){
+    showPage('home');
+  }else{
+    alert("Invalid Login");
+  }
+}
+
+function runHTML(){
+  htmlOutput.srcdoc = htmlCode.value;
+}
+</script>
+</head>
+
+<body>
+
+<header>
+<h1>📘 Smart Learning Hub</h1>
+<p>Learn Better • Grow Stronger</p>
+</header>
+
+<nav>
+<button onclick="showPage('home')">Home</button>
+<button onclick="showPage('content')">Content</button>
+<button onclick="showPage('maths')">Maths</button>
+<button onclick="showPage('english')">English & Science</button>
+<button onclick="showPage('html')">HTML</button>
+<button onclick="showPage('python')">Python</button>
+<button onclick="showPage('motivation')">Motivation</button>
+</nav>
+
+<!-- LOGIN -->
+<div class="page" id="login" style="display:block">
+<div class="card">
+<h2>Login</h2>
+<input id="user" placeholder="Username">
+<input id="pass" type="password" placeholder="Password">
+<button class="action" onclick="login()">Login</button>
+</div>
+</div>
+
+<!-- HOME -->
+<div class="page" id="home">
+<div class="card">
+<h2>Welcome 👋</h2>
+<p class="content-text">
+This website is created to help students who feel weak in studies.
+Here you will learn step-by-step, without fear.
+</p>
+<div class="highlight">
+✔ Learn at your own speed<br>
+✔ Simple explanations<br>
+✔ Practice coding easily<br>
+✔ Build confidence
+</div>
+</div>
+</div>
+
+<!-- CONTENT (IMPROVED & INTERESTING) -->
+<div class="page" id="content">
+<div class="card">
+<h2>📚 Learning Content</h2>
+<p class="content-text">
+<strong>Education is not about marks.</strong><br>
+It is about understanding, confidence, and growth.
+</p>
+
+<h3>🧠 How to Study Smart</h3>
+<ul>
+<li>Study for 30 minutes, then take a break</li>
+<li>Understand concepts instead of memorizing</li>
+<li>Teach others what you learn</li>
+<li>Revise daily, even for 10 minutes</li>
+</ul>
+
+<h3>🎯 Daily Study Plan</h3>
+<div class="highlight">
+Morning → Mental Maths (10 min)<br>
+Afternoon → English Reading (15 min)<br>
+Evening → Science Concepts (20 min)<br>
+Night → Coding Practice (HTML / Python)
+</div>
+
+<h3>💡 Remember</h3>
+<p class="content-text">
+Every expert was once a beginner.  
+Your background does not decide your future — your effort does.
+</p>
+</div>
+</div>
+
+<!-- MATHS -->
+<div class="page" id="maths">
+<div class="card">
+<h2>➗ Mental Maths</h2>
+<p class="content-text">
+Mental maths improves speed and confidence.  
+Practice addition, subtraction, multiplication and percentages daily.
+</p>
+<ul>
+<li>10% of any number = divide by 10</li>
+<li>25% = half of half</li>
+<li>Multiply by 9 → multiply by 10 then subtract</li>
+</ul>
+</div>
+</div>
+
+<!-- ENGLISH & SCIENCE -->
+<div class="page" id="english">
+<div class="card">
+<h2>📖 English Stories</h2>
+
+<h3>The Honest Woodcutter</h3>
+<p class="content-text">
+This story teaches honesty. Being truthful brings long-term rewards.
+</p>
+
+<h3>The Thirsty Crow</h3>
+<p class="content-text">
+This story teaches smart thinking and problem solving.
+</p>
+
+<h2>🔬 Science Topics</h2>
+<ul>
+<li>Solar System – https://www.youtube.com/watch?v=libKVRa01L8</li>
+<li>Photosynthesis – https://www.youtube.com/watch?v=D1Ymc311XS8</li>
+<li>Human Digestive System – https://www.youtube.com/watch?v=Og5xAdC8EUI</li>
+</ul>
+</div>
+</div>
+
+<!-- HTML -->
+<div class="page" id="html">
+<div class="card">
+<h2>💻 HTML Practice</h2>
+<textarea id="htmlCode" rows="8">
+<h1>Hello World</h1>
+<p>I am learning HTML</p>
+</textarea>
+<button class="action" onclick="runHTML()">Run HTML</button>
+<iframe id="htmlOutput"></iframe>
+</div>
+</div>
+
+<!-- PYTHON -->
+<div class="page" id="python">
+<div class="card">
+<h2>🐍 Python Basics</h2>
+<p class="content-text">
+Python is easy to read and write.  
+It is used in AI, websites, games and data science.
+</p>
+<pre class="output">
+print("Hello Python")
+a = 5
+b = 3
+print(a + b)
+</pre>
+</div>
+</div>
+
+<!-- MOTIVATION -->
+<div class="page" id="motivation">
+<div class="card">
+<h2>🔥 Motivation</h2>
+<p class="content-text">
+You are not weak.  
+You are learning.  
+Slow progress is still progress.
+</p>
+<div class="highlight">
+💪 Never give up<br>
+📘 Education changes life<br>
+🌟 Believe in yourself
+</div>
+</div>
+</div>
+
+</body>
+</html>
